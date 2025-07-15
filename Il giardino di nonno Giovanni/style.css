@@ -1,0 +1,216 @@
+/* Reset base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font e colori */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fefdf8;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px;
+}
+
+/* Layout contenitore */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Header / Menu */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fffaf0;
+  border-bottom: 1px solid #e0d8c3;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #5a3e1b;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #5a3e1b;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #a9742c;
+}
+
+/* Sezioni */
+section {
+  background-color: #fff;
+  border: 1px solid #f1ebdc;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #6a4e2f;
+  margin-bottom: 20px;
+}
+
+section p, section li {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Liste attività */
+#attivita ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* --- Galleria con slider automatico --- */
+
+.slider-wrapper {
+  position: relative;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img,
+.slide video {
+  width: 100%;
+  height: auto; /* 🔁 Adatta l’altezza automaticamente */
+  max-height: 500px; /* 🔒 Massima altezza per evitare immagini troppo grandi */
+  object-fit: contain; /* 🔁 Mostra intero senza tagli */
+  border-radius: 12px;
+  background: #000;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Frecce */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* Pallini */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dots .active {
+  background-color: #a9742c;
+}
+
+/* Contatti */
+#contatti a {
+  color: #a9742c;
+  text-decoration: none;
+}
+
+#contatti a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #fffaf0;
+  color: #6a4e2f;
+  font-size: 0.9rem;
+  border-top: 1px solid #e0d8c3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .slider-wrapper {
+    max-width: 100%;
+  }
+
+  .slide img,
+  .slide video {
+    max-height: 400px;
+  }
+}
